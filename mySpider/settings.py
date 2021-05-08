@@ -9,11 +9,11 @@
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3493.3 Safari/537.36'
 
 BOT_NAME = 'mySpider'
-
 LOG_LEVEL = "WARNING"
-
 SPIDER_MODULES = ['mySpider.spiders']
 NEWSPIDER_MODULE = 'mySpider.spiders'
+
+COMMANDS_MODULE = 'mySpider.commands'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'mySpider (+http://www.yourdomain.com)'
@@ -33,7 +33,7 @@ ROBOTSTXT_OBEY = False
 # CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-# COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
@@ -52,9 +52,43 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'mySpider.middlewares.MyspiderDownloaderMiddleware': 543,
-# }
+DOWNLOADER_MIDDLEWARES = {
+    'mySpider.middlewares.DefaultMiddleware': 0,
+    'mySpider.middlewares.Museum0Middleware': 407,
+    'mySpider.middlewares.Collection0Middleware': 9527,
+    'mySpider.middlewares.Collection8Middleware': 9528,
+    'mySpider.middlewares.Collection17Middleware': 9529,
+    'mySpider.middlewares.Collection22Middleware': 9530,
+    'mySpider.middlewares.Collection25Middleware': 9531,
+    'mySpider.middlewares.Collection33Middleware': 9532,
+    'mySpider.middlewares.Collection42Middleware': 9533,
+    'mySpider.middlewares.Collection49Middleware': 9534,
+    'mySpider.middlewares.Collection150Middleware': 9650,
+    'mySpider.middlewares.Collection153Middleware': 9653,
+    'mySpider.middlewares.Collection164Middleware': 9664,
+    'mySpider.middlewares.Collection172Middleware': 9672,
+    'mySpider.middlewares.Collection183Middleware': 9683,
+    'mySpider.middlewares.Collection190Middleware': 9690,
+    'mySpider.middlewares.Collection56Middleware': 2333,
+    'mySpider.middlewares.Collection61Middleware': 2334,
+    'mySpider.middlewares.Collection67Middleware': 2335,
+    'mySpider.middlewares.Collection69Middleware': 2336,
+    'mySpider.middlewares.Collection70Middleware': 2337,
+    'mySpider.middlewares.Collection76Middleware': 2338,
+    'mySpider.middlewares.Collection77Middleware': 2339,
+    'mySpider.middlewares.Collection78Middleware': 2340,
+    'mySpider.middlewares.Collection81Middleware': 2341,
+    'mySpider.middlewares.Collection92Middleware': 2342,
+    'mySpider.middlewares.Collection94Middleware': 2343,
+    'mySpider.middlewares.Collection95Middleware': 2344,
+    'mySpider.middlewares.Collection97Middleware': 2345,
+    'mySpider.middlewares.Collection98Middleware': 2345,
+    'mySpider.middlewares.Exhibition0Middleware': 65535,
+    'mySpider.middlewares.Exhibition8Middleware': 65536,
+    'mySpider.middlewares.Exhibition11Middleware': 65537,
+    'mySpider.middlewares.Exhibition23Middleware': 65538,
+    'mySpider.middlewares.Exhibition24Middleware': 65539,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
