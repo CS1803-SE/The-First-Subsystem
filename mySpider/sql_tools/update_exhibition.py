@@ -12,7 +12,8 @@ from str_filter import *
 
 
 def getConnection():
-    conn = pymysql.connect(host='localhost', port=3306, user='root', password='ana', db='spider_test')
+    conn = pymysql.connect(host='120.26.86.149', port=3306, user='root', password='jk1803_SE',
+                           db='u606804608_MuseumSpider')
     return conn
 
 
@@ -37,7 +38,7 @@ def updateAll(sql):
 
         # 修改exhibitionTime
         exhibitionTime = StrFilter.filter_2(row[2])
-        if len(exhibitionTime) <= 4 and exhibitionTime is not "临时展览":
+        if len(exhibitionTime) <= 4 and exhibitionTime != "临时展览":
             exhibitionTime = "常设展览"
         exhibitionTime = exhibitionTime.replace("~", "").replace(" 结束时间：", "").replace("展览时间：", "").replace(
             "展览地点：銮驾库展品数量：81件", "").split("地址")[0]
@@ -58,7 +59,7 @@ def updateAll(sql):
         # 修改museumName
         museumName = StrFilter.filter_2(row[5])
 
-        replace_sql = """replace into exhibition(exhibitionID,exhibitionName,exhibitionTime,exhibitionIntroduction,museumID,museumName,exhibitionImageLink) VALUES (%s,%s,%s,%s,%s,%s,%s) """
+        replace_sql = """replace into Exhibition_copy1(exhibitionID,exhibitionName,exhibitionTime,exhibitionIntroduction,museumID,museumName,exhibitionImageLink) VALUES (%s,%s,%s,%s,%s,%s,%s) """
 
         cur.execute(replace_sql,
                     (
@@ -71,5 +72,5 @@ def updateAll(sql):
 
 
 if __name__ == '__main__':
-    select_sql = 'select * from exhibition'
+    select_sql = 'select * from Exhibition_copy1'
     updateAll(select_sql)
