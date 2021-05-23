@@ -6,7 +6,6 @@
 # @Software: PyCharm
 
 import pymysql
-# 下述的路径可能每个人不同,我是使mySpider文件夹为源
 from str_filter import *
 
 

@@ -88,6 +88,11 @@ DOWNLOADER_MIDDLEWARES = {
     'mySpider.middlewares.Exhibition11Middleware': 65537,
     'mySpider.middlewares.Exhibition23Middleware': 65538,
     'mySpider.middlewares.Exhibition24Middleware': 65539,
+    'mySpider.middlewares.Exhibition61Middleware': 4540,
+    'mySpider.middlewares.Exhibition67Middleware': 4541,
+    'mySpider.middlewares.Exhibition70Middleware': 4542,
+    'mySpider.middlewares.Exhibition73Middleware': 4543,
+    'mySpider.middlewares.Exhibition98Middleware': 4545,
     'mySpider.middlewares.Exhibition30Middleware': 2347,
     'mySpider.middlewares.Exhibition34Middleware': 2348,
     'mySpider.middlewares.Exhibition36Middleware': 2349,
@@ -139,11 +144,11 @@ ITEM_PIPELINES = {
 
 # 连接数据MySQL
 # 数据库地址
-MYSQL_HOST =  '120.26.86.149'#'46.17.172.103'
+MYSQL_HOST = '120.26.86.149'  # '46.17.172.103'
 # 数据库用户名:
-MYSQL_USER =  'root'#'u606804608_jerAx'
+MYSQL_USER = 'root'  # 'u606804608_jerAx'
 # 数据库密码
-MYSQL_PASSWORD =  'jk1803_SE'#'Password12345678'
+MYSQL_PASSWORD = 'jk1803_SE'  # 'Password12345678'
 # 数据库端口
 MYSQL_PORT = 3306
 # 数据库名称
